@@ -184,6 +184,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1776b53e2e6d93740b184cbcda4e236e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projPrefab: {fileID: 6619000397372244942, guid: 75f21509926bbe84cb0b8ea28881d40c, type: 3}
+  velocityMultiplier: 1
+  launchPoint: {fileID: 0}
+  projectile: {fileID: 0}
+  launchPos: {x: 0, y: 0, z: 0}
+  aimingMode: 0
+  projRB: {fileID: 0}
 --- !u!1 &637532388
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +633,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1679243259}
+  - component: {fileID: 1679243260}
   m_Layer: 0
   m_Name: LaunchPoint
   m_TagString: Untagged
@@ -647,6 +655,18 @@ Transform:
   m_Father: {fileID: 560673484}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!122 &1679243260
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679243258}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4287203721
+  m_Size: 3
 --- !u!1 &1933739538
 GameObject:
   m_ObjectHideFlags: 0

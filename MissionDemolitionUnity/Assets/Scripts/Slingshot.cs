@@ -2,7 +2,7 @@
  * Date Created: Feb 9. 2022
  * Created By: Camp Steiner
  * 
- * Date Modified: Feb 9, 2022
+ * Date Modified: Feb 14, 2022
  * Modified by: Camp Steiner
  * 
  * Description: Controls the action of the slingshot
@@ -17,7 +17,7 @@ public class Slingshot : MonoBehaviour
     [Header("Drop Prefab Here")]
     public GameObject projPrefab;
     [Header("Change Values Around")]
-    public float velocityMultiplier = 1f;
+    public float velocityMultiplier = 6f;
 
     [Header("Don't Touch")]
     public GameObject launchPoint;
@@ -54,11 +54,12 @@ public class Slingshot : MonoBehaviour
 
         projectile.transform.position = launchPos + mouseDelta;
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0)) //on mouse up
         {
             aimingMode = false;
             projRB.isKinematic = false;
-            projRB.velocity = -mouseDelta * velocityMultiplier;
+            projRB.velocity = -mouseDelta * velocityMultiplier; 
+            FollowCam.pointOfInterest = projectile; //set point of interest for follow cam
             projectile = null;
         }
     }

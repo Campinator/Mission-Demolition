@@ -14,7 +14,7 @@ using UnityEngine;
 
 public class FollowCam : MonoBehaviour
 {
-    public static GameObject pointOfInterest; //what to follow
+    public static GameObject POI; //what to follow
 
     public float camZ; //z index of camera currently
 
@@ -35,8 +35,27 @@ public class FollowCam : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (pointOfInterest == null) return;
-        Vector3 dest = pointOfInterest.transform.position;
+        // if (POI == null) return;
+        // Vector3 dest = POI.transform.position;
+
+        Vector3 dest;
+        if(POI == null)
+        {
+            dest = Vector3.zero;
+        }
+        else
+        {
+            dest = POI.transform.position;
+            if(POI.tag == "Projectile")
+            {
+                if (POI.GetComponent<Rigidbody>().IsSleeping())
+                {
+                    POI = null;
+                    return;
+                }
+            }
+        }
+
         //clamp x and y 
         dest.x = Mathf.Max(minXY.x, dest.x);
         dest.y = Mathf.Max(minXY.y, dest.y);

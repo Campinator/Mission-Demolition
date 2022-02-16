@@ -59,7 +59,7 @@ public class Slingshot : MonoBehaviour
             aimingMode = false;
             projRB.isKinematic = false;
             projRB.velocity = -mouseDelta * velocityMultiplier; 
-            FollowCam.pointOfInterest = projectile; //set point of interest for follow cam
+            FollowCam.POI = projectile; //set point of interest for follow cam
             projectile = null;
         }
     }

@@ -1,3 +1,13 @@
+/**
+ * Date Created: Feb 16. 2022
+ * Created By: Camp Steiner
+ * 
+ * Date Modified: Feb 16, 2022
+ * Modified by: Camp Steiner
+ * 
+ * Description: Spawns in clouds and makes them move
+ * 
+ */
 using UnityEngine;
 using System.Collections;
 

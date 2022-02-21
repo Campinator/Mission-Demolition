@@ -17,17 +17,26 @@ public class Slingshot : MonoBehaviour
     [Header("Drop Prefab Here")]
     public GameObject projPrefab;
     [Header("Change Values Around")]
-    public float velocityMultiplier = 6f;
+    public float velocityMultiplier = 10f;
 
     [Header("Don't Touch")]
+    static private Slingshot S;  
     public GameObject launchPoint;
     public GameObject projectile; //instance of projectile
     public Vector3 launchPos; //position of projectile
     public bool aimingMode; //is player aiming
     public Rigidbody projRB; //useful for later
 
+    static public Vector3 LAUNCH_POS {                                       
+            get {
+                if (S == null ) return Vector3.zero;
+                return S.launchPos;
+            }
+        }
+
     private void Awake()
     {
+        S = this;    
         Transform launchPointTrans = transform.Find("LaunchPoint");
         launchPoint = launchPointTrans.gameObject; //find child obj called LaunchPoint
         launchPoint.SetActive(false); //disable element
@@ -61,6 +70,8 @@ public class Slingshot : MonoBehaviour
             projRB.velocity = -mouseDelta * velocityMultiplier; 
             FollowCam.POI = projectile; //set point of interest for follow cam
             projectile = null;
+            MissionDemolition.ShotFired();
+            ProjectileLine.S.poi = projectile;
         }
     }
     private void OnMouseEnter()

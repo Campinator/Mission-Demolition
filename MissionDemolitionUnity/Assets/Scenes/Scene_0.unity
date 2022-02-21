@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projPrefab: {fileID: 6619000397372244942, guid: 75f21509926bbe84cb0b8ea28881d40c, type: 3}
-  velocityMultiplier: 8
+  velocityMultiplier: 9
   launchPoint: {fileID: 0}
   projectile: {fileID: 0}
   launchPos: {x: 0, y: 0, z: 0}
@@ -1318,13 +1318,22 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.106918335
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9971924
+        value: 0.276733
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
